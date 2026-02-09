@@ -44,10 +44,16 @@ async def async_setup_entry(hass, entry, async_add_entities):
     async_add_entities(sensors, update_before_add=True)
 
 
-def format_difficulty(value: int) -> str:
-    """Convert difficulty values into human-readable units."""
+def format_difficulty(value) -> str | None:
+    """Convert difficulty values into human-readable units (k, M, G, T, P, E)."""
     if value is None:
         return None
+
+    # AxeOS may return difficulty as string or float
+    try:
+        value = float(value)
+    except (ValueError, TypeError):
+        return str(value)
 
     units = [
         (1e18, "E"),
@@ -62,7 +68,8 @@ def format_difficulty(value: int) -> str:
         if value >= factor:
             return f"{value / factor:.2f} {suffix}"
 
-    return str(value)
+    return str(int(value))
+
 
 
 class BitAxeSensor(Entity):
