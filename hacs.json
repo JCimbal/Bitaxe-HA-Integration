@@ -1,8 +1,6 @@
 {
   "name": "Bitaxe Monitoring",
   "content_in_root": false,
-  "country": "DE",
-  "description": "Integration for monitoring Bitaxe miners in Home Assistant",
   "domains": ["bitaxe"],
   "iot_class": "local_polling",
   "render_readme": true,
