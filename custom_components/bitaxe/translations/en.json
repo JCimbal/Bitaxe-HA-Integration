@@ -11,7 +11,8 @@
       }
     },
     "error": {
-      "cannot_connect": "Failed to connect to Bitaxe. Please check the IP address."
+      "cannot_connect": "Failed to connect to Bitaxe. Please check the IP address.",
+      "invalid_ip": "Invalid IP address format."
     }
   }
 }
