@@ -43,6 +43,24 @@ def format_difficulty(value) -> str | None:
     return str(int(value))
 
 
+def format_uptime(seconds) -> str | None:
+    """Convert seconds into a human-readable uptime string (Xd HH:mm:ss)."""
+    if seconds is None:
+        return None
+    try:
+        seconds = int(seconds)
+    except (ValueError, TypeError):
+        return str(seconds)
+
+    days, remainder = divmod(seconds, 86400)
+    hours, remainder = divmod(remainder, 3600)
+    minutes, secs = divmod(remainder, 60)
+
+    if days > 0:
+        return f"{days}d {hours:02d}:{minutes:02d}:{secs:02d}"
+    return f"{hours:02d}:{minutes:02d}:{secs:02d}"
+
+
 SENSOR_DESCRIPTIONS: tuple[SensorEntityDescription, ...] = (
     SensorEntityDescription(
         key="power",
@@ -105,6 +123,7 @@ SENSOR_DESCRIPTIONS: tuple[SensorEntityDescription, ...] = (
         native_unit_of_measurement="%",
         state_class=SensorStateClass.MEASUREMENT,
         icon="mdi:fan",
+        suggested_display_precision=0,
     ),
     SensorEntityDescription(
         key="fanrpm",
@@ -116,8 +135,6 @@ SENSOR_DESCRIPTIONS: tuple[SensorEntityDescription, ...] = (
     SensorEntityDescription(
         key="uptimeSeconds",
         name="Uptime",
-        device_class=SensorDeviceClass.DURATION,
-        native_unit_of_measurement=UnitOfTime.SECONDS,
         icon="mdi:clock",
     ),
 )
@@ -161,5 +178,8 @@ class BitAxeSensor(BitAxeEntity, SensorEntity):
 
         if self.entity_description.key in ("bestDiff", "bestSessionDiff"):
             return format_difficulty(value)
+
+        if self.entity_description.key == "uptimeSeconds":
+            return format_uptime(value)
 
         return value
