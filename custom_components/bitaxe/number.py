@@ -26,30 +26,6 @@ class BitAxeNumberEntityDescription(NumberEntityDescription):
 
 NUMBER_DESCRIPTIONS: tuple[BitAxeNumberEntityDescription, ...] = (
     BitAxeNumberEntityDescription(
-        key="frequency",
-        name="Frequency",
-        icon="mdi:sine-wave",
-        api_key="frequency",
-        native_min_value=100,
-        native_max_value=800,
-        native_step=25,
-        native_unit_of_measurement="MHz",
-        mode=NumberMode.BOX,
-        entity_category=EntityCategory.CONFIG,
-    ),
-    BitAxeNumberEntityDescription(
-        key="core_voltage",
-        name="Core Voltage",
-        icon="mdi:lightning-bolt",
-        api_key="coreVoltage",
-        native_min_value=1000,
-        native_max_value=1500,
-        native_step=10,
-        native_unit_of_measurement="mV",
-        mode=NumberMode.BOX,
-        entity_category=EntityCategory.CONFIG,
-    ),
-    BitAxeNumberEntityDescription(
         key="temp_target",
         name="Target Temperature",
         icon="mdi:thermometer",

@@ -61,8 +61,8 @@ All sensors, controls, and settings will appear automatically under your device.
 ### Mining Settings
 | Setting | Type | Range | Description |
 |---------|------|-------|-------------|
-| Frequency | Number | 100–800 MHz | ASIC clock frequency |
-| Core Voltage | Number | 1000–1500 mV | ASIC core voltage |
+| Frequency | Select | Model-specific | ASIC clock frequency (options depend on ASIC model) |
+| Core Voltage | Select | Model-specific | ASIC core voltage (options depend on ASIC model) |
 | Automatic Fan Control | Switch | On/Off | Toggle between automatic and manual fan control |
 | Target Temperature | Number | 30–90 °C | Target temperature for auto fan control |
 | Minimum Fan Speed | Number | 0–100% | Minimum fan speed |
@@ -70,6 +70,7 @@ All sensors, controls, and settings will appear automatically under your device.
 ### Display Settings
 | Setting | Type | Range | Description |
 |---------|------|-------|-------------|
+| Display Sleep | Select | Always off – Always on | Display sleep timeout |
 | Display Rotation | Select | 0°, 90°, 180°, 270° | On-device display orientation (requires restart to take effect) |
 | Invert Display Colors | Switch | On/Off | Invert the on-device display colors |
 
