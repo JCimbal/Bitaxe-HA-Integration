@@ -22,10 +22,17 @@ class BitAxeSwitchEntityDescription(SwitchEntityDescription):
 
 SWITCH_DESCRIPTIONS: tuple[BitAxeSwitchEntityDescription, ...] = (
     BitAxeSwitchEntityDescription(
-        key="use_fallback_stratum",
-        name="Use Fallback Stratum",
-        icon="mdi:server-network",
-        api_key="useFallbackStratum",
+        key="auto_fan_speed",
+        name="Automatic Fan Control",
+        icon="mdi:fan-auto",
+        api_key="autofanspeed",
+        entity_category=EntityCategory.CONFIG,
+    ),
+    BitAxeSwitchEntityDescription(
+        key="invert_screen",
+        name="Invert Display Colors",
+        icon="mdi:monitor-eye",
+        api_key="invertscreen",
         entity_category=EntityCategory.CONFIG,
     ),
     BitAxeSwitchEntityDescription(
@@ -33,27 +40,6 @@ SWITCH_DESCRIPTIONS: tuple[BitAxeSwitchEntityDescription, ...] = (
         name="Overclock Enabled",
         icon="mdi:speedometer",
         api_key="overclockEnabled",
-        entity_category=EntityCategory.CONFIG,
-    ),
-    BitAxeSwitchEntityDescription(
-        key="auto_fan_speed",
-        name="Auto Fan Speed",
-        icon="mdi:fan-auto",
-        api_key="autofanspeed",
-        entity_category=EntityCategory.CONFIG,
-    ),
-    BitAxeSwitchEntityDescription(
-        key="invert_screen",
-        name="Invert Display",
-        icon="mdi:monitor-eye",
-        api_key="invertscreen",
-        entity_category=EntityCategory.CONFIG,
-    ),
-    BitAxeSwitchEntityDescription(
-        key="overheat_mode",
-        name="Overheat Mode",
-        icon="mdi:fire-alert",
-        api_key="overheat_mode",
         entity_category=EntityCategory.CONFIG,
     ),
 )

@@ -58,40 +58,26 @@ All sensors, controls, and settings will appear automatically under your device.
 | Restart | Restart the BitAxe device |
 | Identify | Make the device blink to identify it |
 
-### Configuration Switches
-| Switch | Description |
-|--------|-------------|
-| Use Fallback Stratum | Enable/disable the fallback mining pool |
-| Overclock Enabled | Enable/disable overclocking (required for voltage/frequency changes) |
-| Auto Fan Speed | Toggle between automatic and manual fan control |
-| Invert Display | Invert the on-device display |
-| Overheat Mode | Enable/disable overheat protection mode |
+### Mining Settings
+| Setting | Type | Range | Description |
+|---------|------|-------|-------------|
+| Frequency | Number | 100–800 MHz | ASIC clock frequency |
+| Core Voltage | Number | 1000–1500 mV | ASIC core voltage |
+| Automatic Fan Control | Switch | On/Off | Toggle between automatic and manual fan control |
+| Target Temperature | Number | 30–90 °C | Target temperature for auto fan control |
+| Minimum Fan Speed | Number | 0–100% | Minimum fan speed |
 
-### Numeric Settings
-| Setting | Range | Description |
-|---------|-------|-------------|
-| Stratum Port | 1–65535 | Mining pool port |
-| Fallback Stratum Port | 1–65535 | Fallback pool port |
-| Core Voltage | 1000–1500 mV | ASIC core voltage |
-| ASIC Frequency | 100–800 MHz | ASIC clock frequency |
-| Fan Speed Setting | 0–100% | Manual fan speed (when auto fan is off) |
-| Target Temperature | 30–90 °C | Target temperature for auto fan control |
-| Display Timeout | -1–3600 s | Display timeout (-1 = always on, 0 = always off) |
-| Stats Logging Interval | 1–3600 s | Frequency of stats logging |
+### Display Settings
+| Setting | Type | Range | Description |
+|---------|------|-------|-------------|
+| Display Rotation | Select | 0°, 90°, 180°, 270° | On-device display orientation (requires restart to take effect) |
+| Invert Display Colors | Switch | On/Off | Invert the on-device display colors |
 
-### Selection Settings
-| Setting | Options | Description |
-|---------|---------|-------------|
-| Display Rotation | 0°, 90°, 180°, 270° | On-device display orientation |
-
-### Text Settings
-| Setting | Description |
-|---------|-------------|
-| Stratum URL | Mining pool URL |
-| Stratum User | Mining pool username |
-| Fallback Stratum URL | Fallback mining pool URL |
-| Fallback Stratum User | Fallback pool username |
-| Hostname | Device hostname on the network |
+### Other Settings
+| Setting | Type | Description |
+|---------|------|-------------|
+| Hostname | Text | Device hostname on the network |
+| Overclock Enabled | Switch | Enable/disable overclocking (required for voltage/frequency changes) |
 
 ## Screenshots
 

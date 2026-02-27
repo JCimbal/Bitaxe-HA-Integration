@@ -22,34 +22,6 @@ class BitAxeTextEntityDescription(TextEntityDescription):
 
 TEXT_DESCRIPTIONS: tuple[BitAxeTextEntityDescription, ...] = (
     BitAxeTextEntityDescription(
-        key="stratum_url",
-        name="Stratum URL",
-        icon="mdi:server-network",
-        api_key="stratumURL",
-        entity_category=EntityCategory.CONFIG,
-    ),
-    BitAxeTextEntityDescription(
-        key="stratum_user",
-        name="Stratum User",
-        icon="mdi:account",
-        api_key="stratumUser",
-        entity_category=EntityCategory.CONFIG,
-    ),
-    BitAxeTextEntityDescription(
-        key="fallback_stratum_url",
-        name="Fallback Stratum URL",
-        icon="mdi:server-network-off",
-        api_key="fallbackStratumURL",
-        entity_category=EntityCategory.CONFIG,
-    ),
-    BitAxeTextEntityDescription(
-        key="fallback_stratum_user",
-        name="Fallback Stratum User",
-        icon="mdi:account-outline",
-        api_key="fallbackStratumUser",
-        entity_category=EntityCategory.CONFIG,
-    ),
-    BitAxeTextEntityDescription(
         key="hostname",
         name="Hostname",
         icon="mdi:label",
